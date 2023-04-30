@@ -13,7 +13,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>新乡市十一中 |  新乡市十一中博客站</title>
+      <title>新乡市十一中关于防溺水事件 |  新乡市十一中博客站</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -52,6 +52,9 @@
   <div id="app">
     
       
+      <canvas width="1777" height="841"
+        style="position: fixed; left: 0px; top: 0px; z-index: 99999; pointer-events: none;"></canvas>
+      
     <main class="content on">
       <section class="outer">
   <article
@@ -66,7 +69,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  新乡市十一中
+  新乡市十一中关于防溺水事件
 </h1>
  
 
@@ -82,7 +85,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">6</span>
+            <span class="post-count">182</span>
         </span>
     </span>
 
@@ -105,6 +108,7 @@
     <div class="article-entry" itemprop="articleBody">
        
   <p>OK呀，一个测试</p>
+<p>各县市区各学校，五一将至，天气转暖，这个假期是防溺亡的重要节点。请务必提醒到每一位学生和家长，做到“六不一会”和“四知”。<br>“六不”：<br>1、不私自下水游泳;<br>2、不擅自与他人结伴游泳;<br>3、不在无家长或教师带领的情况下游泳;<br>4、不到无安全设施、无救援人员的水域游泳;<br>5、不到不熟悉的水域游泳;<br>6、不熟悉水性的青少年不擅自下水施救。<br>“一会”：学会基本的自护、自救方法。<br>家长做到“四知”:<br>知孩子去向、知孩子同伴、知孩子归时、知孩子活动内容。</p>
  
       <!-- reward -->
       
@@ -277,7 +281,7 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" href="/archives">归档</a>
+      <a class="nav-item-link" href="/archives">总览</a>
     </li>
     
     <li class="nav-item">
@@ -289,19 +293,15 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" href="/tags/%E6%97%85%E8%A1%8C/">旅行</a>
+      <a class="nav-item-link" target="_blank" rel="noopener" href="http://shenyu-vip.lofter.com">图集</a>
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" target="_blank" rel="noopener" href="http://shenyu-vip.lofter.com">摄影</a>
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://user.qzone.qq.com/3112650397">表白墙</a>
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" href="/friends">友链</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/2019/about">关于我</a>
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://user.qzone.qq.com/2407286504">关于我</a>
     </li>
     
   </ul>
@@ -334,7 +334,7 @@
 <!-- #reward -->
 <div id="reward">
   <span class="close"><i class="ri-close-line"></i></span>
-  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <p class="reward-p"><i class="ri-cup-line"></i>为了十一中的荣誉！</p>
   <div class="reward-box">
     
     <div class="reward-item">
@@ -502,7 +502,9 @@
 <!-- ClickBoom1 -->
 
 <!-- ClickBoom2 -->
-
+ 
+<script src="/js/clickBoom2.js"></script>
+ 
 <!-- CodeCopy -->
  
 <link rel="stylesheet" href="/css/clipboard.css">
@@ -562,7 +564,9 @@
 </script>
  
 <!-- CanvasBackground -->
-
+ 
+<script src="/js/dz.js"></script>
+ 
 <script>
   if (window.mermaid) {
     mermaid.initialize({ theme: "forest" });
@@ -572,6 +576,42 @@
 
     
     
+<script>
+  const password = "123456";
+  const lock_password = window.sessionStorage.getItem("lock_password");
+  console.log(password, lock_password);
+  if (lock_password !== password) {
+    Swal.fire({
+      title: "Please enter password",
+      input: "text",
+      inputAttributes: {
+        autocapitalize: "off",
+      },
+      showCancelButton: false,
+      showLoaderOnConfirm: true,
+      allowOutsideClick: false,
+      confirmButtonText: "Ok",
+    }).then((result) => {
+      console.log(result);
+      if (result.isConfirmed) {
+        console.log(password);
+        if (result.value === password) {
+          window.sessionStorage.setItem("lock_password", result.value);
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Incorrect password, please try again",
+            confirmButtonText: "Ok",
+            allowOutsideClick: false,
+          }).then(() => {
+            window.location.reload();
+          });
+        }
+      }
+    });
+  }
+</script>
+
 
   </div>
 </body>
